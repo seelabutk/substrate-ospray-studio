@@ -27,14 +27,14 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 6. Run the following command to deploy your RaaS to AWS:
 
-  substrate ospray_studio start
+    ```substrate ospray_studio start```
 
 7. The previous command should output a link where your RaaS can be accessed. Once your RaaS has had time to complete setup (this may take 10-15 minutes), open that link and ensure that you can see the default OSPRay Studio scene.
 This should look very poor at this point, as your next goal will be to configure the scene to be well organized.
 
 8. To kill your RaaS, run the following command:
 
-  substrate ospray_studio stop
+    ```substrate ospray_studio stop```
 
 ### Step 2 - Build a browser UI to control the RaaS. Your UI must allow: (a) placing an object into the scene, (b) set up a light source, and (c) set up camera positions.
 
