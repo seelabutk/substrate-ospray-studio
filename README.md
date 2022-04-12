@@ -64,13 +64,11 @@ The UI you build around this functionality must be able to do the following:
 The RaaS also supports the creation of movies. To do so, you may save multiple SceneGraphs with different parameters (such as the camera position) as key frames, and then send them via a POST request to {your_raas_link}/renderMovie.
 The RaaS will perform a linear interpolation between each key frame and produce an AV1-encoded .mp4 file with the request length and frame rate. The format of the body of your POST request should look as follows:
 
-    ```
     {
       frames: Array of SceneGraphs to use as key frames,
       fps: your desired fps,
       length: your desired video length in seconds
     }
-    ```
 
 This process may be slow due to the need to render large numbers of frames, so consider beginning with something small such as a 2-second, 10-fps video. Also, please note that the video may not exactly match your desired length and frame rate after being encoded.
 
