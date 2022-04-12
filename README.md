@@ -21,7 +21,7 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 5. Define the configuration for Substrate. This can be done by creating a file called `substrate.config.yaml` in your working directory. The format and available options for this file can be found [here](https://github.com/seelabutk/substrate/blob/main/api/substrate.config.yaml). You will need to define the following:
 
-  - data.source: a list of paths to the GLTF/OBJ files you want to load into your scene. Please ensure that the size of your objects doesn't exceed the free-tier limits.
+  - data.source: a list of paths to the directories containing the GLTF/OBJ files you want to load into your scene. Please ensure that the size of your objects doesn't exceed the free-tier limits.
   - aws.region: the AWS region you want to deploy to.
   - aws.managers: the list of EC2 instances you want to use to run your RaaS (a single instance should be sufficient for this project). Please ensure that your selected instance type is eligible for the free-tier.
 
