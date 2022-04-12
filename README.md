@@ -9,6 +9,8 @@ Specifically, you will use Substrate, which is our latest effort to consolidate 
 
 After setting up the RaaS, your next tasks are to build a scene, build a front-end UI in a web browser using Javascript so that you can interact with the scene, and then create a movie by setting and controlling key frames. The specific requirements are as follows.
 
+### Possible Step 0 - Use OSPRay Studio to build a static scene with desired effects. This may be better than having them perform complex operations through the SceneGraph.
+
 ### Step 1 - Set up the RaaS
 
 1. Set up your own AWS account. Go to https://aws.amazon.com/ and create a new free-tier account.
@@ -29,16 +31,48 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
     ```substrate ospray_studio start```
 
-7. The previous command should output a link where your RaaS can be accessed. Once your RaaS has had time to complete setup (this may take 10-15 minutes), open that link and ensure that you can see the default OSPRay Studio scene.
+7. The previous command should output a link where your RaaS can be accessed. Once your RaaS has had time to complete setup (this may take 10-15 minutes), open that link and ensure that you can see the default OSPRay Studio scene display.
 This should look very poor at this point, as your next goal will be to configure the scene to be well organized.
 
 8. To kill your RaaS, run the following command:
 
     ```substrate ospray_studio stop```
 
-### Step 2 - Build a browser UI to control the RaaS. Your UI must allow: (a) placing an object into the scene, (b) set up a light source, and (c) set up camera positions.
+### Step 2 - Build a browser UI to control the RaaS
 
-### Step 3 - Add functionality in your browser UI to record keyframes and submit to the substrate:ospray RaaS to render the movie
+OSPRay Studio is configured through what is referred to as a SceneGraph (.sg file). This is a JSON-formatted file that contains the information necessary to perform a rendering.
+To retrieve the SceneGraph used to perform the initial rendering you looked at in step 1.7, you may send a request to {your_raas_link}/sg with `curl` or any other tool capable of issuing HTTP requests.
+Note that this file will not exist until you've performed at least one render, so follow step 1.7 each time you launch your RaaS to ensure this works.
+
+Once you have the SceneGraph, changes can be made to the scene by editing the JSON, and issuing a new rendering request to the RaaS. This can be done by sending a POST request to {your_raas_link}/render that contains your new SceneGraph in the request body.
+The response from the server, if your SceneGraph is valid, will be a PNG-formatted image with the newly-rendered frame.
+
+The UI you build around this functionality must be able to do the following:
+
+1. Set the camera's position, up, and view vectors. To do so, please add the following properties to the SceneGraph:
+
+    - camera.position: an Array with three floats corresponding to the position vector.
+    - camera.up: an Array with three floats corresponding to the up vector.
+    - camera.view: an Array with three floats corresponding to the view vector.
+
+2. Move your objects within the scene. Within the SceneGraph, each of your objects may be found at the end of the `world.children` Array.
+
+3. Display the scene rendered with the edited SceneGraph.
+
+### Step 3 - Add functionality to your browser UI to create movies
+
+The RaaS also supports the creation of movies. To do so, you may save multiple SceneGraphs with different parameters (such as the camera position) as key frames, and then send them via a POST request to {your_raas_link}/renderMovie.
+The RaaS will perform a linear interpolation between each key frame and produce an AV1-encoded .mp4 file with the request length and frame rate. The format of the body of your POST request should look as follows:
+
+    ```
+    {
+      frames: Array of SceneGraphs to use as key frames,
+      fps: your desired fps,
+      length: your desired video length in seconds
+    }
+    ```
+
+This process may be slow due to the need to render large numbers of frames, so consider beginning with something small such as a 2-second, 10-fps video. Also, please note that the video may not exactly match your desired length and frame rate after being encoded.
 
 ### Grading criteria
 
