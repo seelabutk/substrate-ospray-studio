@@ -1,0 +1,9 @@
+data:
+  source:
+    - ./data/apple
+
+aws:
+  bucket: substrate-data
+  region: us-east-1
+  managers:
+    't2.micro': 1
