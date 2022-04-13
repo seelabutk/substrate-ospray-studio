@@ -11,9 +11,13 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 ### Step 1 - Set up the RaaS
 
-1. Set up your own AWS account. Go to https://aws.amazon.com/ and create a new free-tier account. You should not need to use any resources that don't qualify for the free-tier.
+0. Clone this repository
 
-2. Follow [this guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtogetcredentials.html) to get your CLI credentials for AWS, and ensure they are available for the next steps.
+    ```git clone https://github.com/seelabutk/substrate-ospray-studio```
+
+1. Set up your own AWS account. Go to https://portal.aws.amazon.com/billing/signup and create a new free-tier account. You should not need to use any resources that don't qualify for the free-tier.
+
+2. Follow [this guide](docs/AWS_Account_Setup.md) to get your CLI credentials for AWS, and ensure they are available for the next steps.
 
 3. Follow [this guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install the AWS CLI.
 
@@ -25,10 +29,10 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 6. Install Substrate with `pip install seelabutk-substrate`.
 
-7. Define the configuration for Substrate. This can be done by creating a file called `substrate.config.yaml` in your working directory. An example config that will load a simple demo is included with this repo.
+7. Define the configuration for Substrate. This can be done by opening the file called `substrate.config.yaml` in your cloned repository.
 For more information on the full options available to you, please see the [configuration API](https://github.com/seelabutk/substrate/blob/main/api/substrate.config.yaml).
 
-8. Run the following command to deploy your RaaS to AWS:
+8. Run the following command to deploy your RaaS to AWS - Make sure you run this command FROM the directory of your repo!
 
     ```substrate ospray_studio start```
 
@@ -36,7 +40,7 @@ For more information on the full options available to you, please see the [confi
 
 TODO: screenshot of link output here
 
-Once your RaaS has had time to complete setup (this may take 10-15 minutes), open that link and ensure that you can see the default OSPRay Studio scene display.
+Wait until your RaaS has had time to complete setup (this may take 10-15 minutes), then open the http version of this link (if your browser opens an https link, remove the s) and ensure that you can see the default OSPRay Studio scene display.
 If your RaaS launched successfully, you should see a rendering of an apple.
 
 TODO: screenshot of apple here
