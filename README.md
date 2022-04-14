@@ -38,12 +38,12 @@ For more information on the full options available to you, please see the [confi
 
 9. The previous command should output a link where your RaaS can be accessed.
 
-TODO: screenshot of link output here
+![ready](https://user-images.githubusercontent.com/8481770/163423219-494f3ecd-0727-4ac1-9f35-f6b15077be13.png)
 
 Wait until your RaaS has had time to complete setup (this may take 10-15 minutes), then open the http version of this link (if your browser opens an https link, remove the s) and ensure that you can see the default OSPRay Studio scene display.
 If your RaaS launched successfully, you should see a rendering of an apple.
 
-TODO: screenshot of apple here
+![apple](https://user-images.githubusercontent.com/8481770/163423252-2cdbdcdd-ee92-4d3d-8644-0b8420c45f70.png)
 
 10. To kill your RaaS, run the following command:
 
