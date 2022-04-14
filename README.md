@@ -55,7 +55,6 @@ The RaaS includes an API which can be used to submit rendering requests and get 
     - http://127.0.0.1/sg - Returns the SceneGraph that was used to perform the first rendering by the RaaS. This will not work until the previous endpoint has been opened in a browser.
     - http://127.0.0.1/render - Takes a SceneGraph as input and returns a PNG of the newly rendered frame. This should primarily be used to identify suitable SceneGraphs for use as key frames by the following endpoint.
     - http://127.0.0.1/renderMovie - Takes multiple SceneGraphs treated as key frames as input and returns a movie animating the scene through these key frames.
-    - TODO: Expose number of samples and resolution.
 
 You can interact with these endpoints in a browser through the use of the Fetch API. Examples of how to use the Fetch API to communicate with each endpoint can be seen in the JavaScript file in the skeleton code for this project.
 More details on the Fetch API can be found [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
