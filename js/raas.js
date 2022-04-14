@@ -15,7 +15,7 @@ function get_scene_graph() {
 		scene_graph.camera.view = [0.0, 0.0, -1.0];
 
 		scene_graph.resolution = '720p'; // This can be a description of the resolution such as 720p, 4K, 8K, etc, or a width by height such as 1920x1080.
-		scene_graph.spp = 1; // The number of samples per pixel to use when rendering.
+		scene_graph.samples_per_pixel = 1; // The number of samples per pixel to use when rendering.
 	});
 }
 
