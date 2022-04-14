@@ -84,7 +84,7 @@ Once you have the SceneGraph, changes can be made to the scene by editing the JS
 
 To edit the SceneGraph, we have included [JSON Editor](https://github.com/josdejong/jsoneditor) in the skeleton code for this project. Here is an example of how it could look once incorporated into your UI.
 
-TODO: screenshot of JSON Editor here
+![jsoneditor](https://user-images.githubusercontent.com/8481770/163428586-d2b99832-2a15-4732-879a-17ed52ab85be.png)
 
 To use the edited SceneGraph to produce a new rendering, send a POST request to {your_raas_link}/render that contains your new SceneGraph in the request body.
 The response from the server, if your SceneGraph is valid, will be a PNG-formatted image with the newly-rendered frame. An example of how this works is included in the skeleton code.
