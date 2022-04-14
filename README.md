@@ -106,8 +106,10 @@ This process may be slow due to the need to render large numbers of frames, so c
 
 ### Grading criteria
 
-  - Step 1: 30 points
-  - Step 2: 30 points
-  - Step 3: 40 points
-  - Intuitiveness and Design of the UI: 30 points extra credit
-  - TODO: extra credit for advanced use of materials/lighting effects
+  - Step 1: 20 points
+  - Step 2: 10 points
+  - Step 3: 10 points
+  - Step 4: 20 points
+  - Step 5: 20 points
+  - Intuitiveness and design of the UI: up to 30 points extra credit
+  - Use of material and lighting effects: up to 30 points extra credit
