@@ -38,7 +38,7 @@ function render_movie(key_frames) {
 		method: 'POST'
 	};
 
-	fetch(`${RAAS_LOCATION}/render/`, options).then((response) => response.blob()).then((blob) => {
+	fetch(`${RAAS_LOCATION}/renderMovie/`, options).then((response) => response.blob()).then((blob) => {
 		const movie_url = URL.createObjectURL(blob);
 		// do something with the movie here!
 	});
