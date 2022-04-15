@@ -17,7 +17,7 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 1. Set up your own AWS account. Go to https://portal.aws.amazon.com/billing/signup and create a new free-tier account. You should not need to use any resources that don't qualify for the free-tier.
 
-2. TODO: James describes how to get CLI credentials with screenshots and save them as environment variables.
+2. Follow [this guide](./docs/AWS_Account_Setup.md) to set up your CLI credentials.
 
 3. Follow [this guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install the AWS CLI.
 

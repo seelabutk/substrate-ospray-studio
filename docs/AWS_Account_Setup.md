@@ -50,10 +50,10 @@
 
         ![](./images/windows_4.png)
 
-        5. Create an entry with the Variable Name of AWS_ACCESS_KEY_ID with a Variable Value of YOUR_ACCESS_KEY
+        5. Create an entry with the Variable Name of AWS_ACCESS_KEY_ID with a Variable Value of {YOUR_ACCESS_KEY}
 
         ![](./images/windows_5.png)
 
-        6. Create an entry with the Variable Name of AWS_SECRET_ACCESS_KEY with a Variable Value of YOUR_SECRET_ACCESS_KEY
+        6. Create another entry with the Variable Name of AWS_SECRET_ACCESS_KEY with a Variable Value of {YOUR_SECRET_ACCESS_KEY}
 
-        ![](./images/windows_6.png)
+        7. Create a final entry with the Variable Name of AWS_DEFAULT_REGION with a Variable Value of us-east-1
