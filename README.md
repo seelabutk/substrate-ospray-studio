@@ -70,11 +70,16 @@ Now, repeat parts 8 & 9 of Step 1 to get a simple rendering with each of the obj
 
 ### Step 3 - Run the skeleton code
 
-TODO: James how do you want them to host their skeleton code locally? I'll give them an HTML file with JSON Editor loaded and JS which will do an initial render of the objects with no configuration.
+Before you can configure OSPRay Studio, you will need to begin using your own front-end to connect with the RaaS. We have provided skeleton code that replicates the behavior of the RaaS' front-end and provides examples of
+interacting with the RaaS' API. This can be run with any static file server, even the one bundled with the version of Python you installed earlier. To use Python's server, run:
+
+    ```python -m http.server 8080```
+
+Now, you can open http://localhost:8080 or http://127.0.0.1:8080 to view your front-end.
+
+Before your front-end can show the rendering, you'll need modify the RAAS_LOCATION variable in `raas.js` to point to your RaaS. Then, reload your front-end and you should see the rendering of your objects.
 
 ### Step 4 - Use jsoneditor to modify the SceneGraph
-
-Before beginning this step, take the skeleton code and modify the RAAS_LOCATION variable in `raas.js` to point to your RaaS.
 
 OSPRay Studio is configured through what is referred to as a SceneGraph (.sg file). This is a JSON-formatted file that contains the information necessary to perform an OSPRay rendering.
 You may retrieve the SceneGraph used to render the initial scene through the endpoint at {your_raas_link}/sg.
