@@ -73,7 +73,7 @@ Now, repeat parts 8 & 9 of Step 1 to get a simple rendering with each of the obj
 Before you can configure OSPRay Studio, you will need to begin using your own front-end to connect with the RaaS. We have provided skeleton code that replicates the behavior of the RaaS' front-end and provides examples of
 interacting with the RaaS' API. This can be run with any static file server, even the one bundled with the version of Python you installed earlier. To use Python's server, run:
 
-    ```python -m http.server 8080```
+    python -m http.server 8080
 
 Now, you can open http://localhost:8080 or http://127.0.0.1:8080 to view your front-end.
 
