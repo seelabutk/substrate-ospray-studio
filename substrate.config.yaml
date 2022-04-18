@@ -6,4 +6,4 @@ aws:
   bucket: substrate-data
   region: us-east-1
   managers:
-    't2.micro': 1
+    't3.medium': 1

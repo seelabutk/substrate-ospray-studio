@@ -15,7 +15,7 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
     ```git clone https://github.com/seelabutk/substrate-ospray-studio```
 
-1. Set up your own AWS account. Go to https://portal.aws.amazon.com/billing/signup and create a new free-tier account. You should not need to use any resources that don't qualify for the free-tier.
+1. Set up your own AWS account. Go to https://portal.aws.amazon.com/billing/signup and create a new account.
 
 2. Follow [this guide](./docs/AWS_Account_Setup.md) to set up your CLI credentials.
 
@@ -62,7 +62,7 @@ More details on the Fetch API can be found [here](https://developer.mozilla.org/
 ### Step 2 - Add your own objects to the scene
 
 Start by going to [Poly Haven](https://polyhaven.com/models) and grabbing at least three objects to put in your scene instead of the apple. Make sure you download GLTF files to ensure compatibility with OSPRay Studio.
-To ensure that you don't exceed the AWS free-tier limits, please make sure that you don't use more than 5GB of storage space.
+To ensure that you don't exceed the AWS free-tier limits for S3 and EFS, please make sure that you don't use more than 5GB of storage space.
 
 Next, modify the `data.source` option in `substrate.config.yaml` to point to the directory containing these three files.
 
