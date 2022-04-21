@@ -29,7 +29,7 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 6. Install Substrate with `pip install seelabutk-substrate`.
 
-7. Define the configuration for Substrate. This can be done by opening the file called `substrate.config.yaml` in your cloned repository.
+7. Define the configuration for Substrate. This can be done by opening the file called `substrate.config.yaml` in your cloned repository. Set the `aws.bucket` property to `substrate-data-{YOUR_NETID}`.
 For more information on the full options available to you, please see the [configuration API](https://github.com/seelabutk/substrate/blob/main/api/substrate.config.yaml).
 
 8. Run the following command to deploy your RaaS to AWS - Make sure you run this command FROM the directory of your repo!
