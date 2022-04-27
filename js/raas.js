@@ -46,6 +46,6 @@ function render_movie(key_frames) {
 
 	fetch(`${RAAS_LOCATION}/renderMovie/`, options).then((response) => response.blob()).then((blob) => {
 		const movie_url = URL.createObjectURL(blob);
-		// do something with the movie here!
+		// This approach can be used to download the movie: https://stackoverflow.com/questions/19327749/javascript-blob-filename-without-link
 	});
 }
