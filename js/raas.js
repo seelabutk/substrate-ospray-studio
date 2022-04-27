@@ -7,7 +7,7 @@ function initial_render() {
 }
 
 function get_scene_graph() {
-	fetch(`${RAAS_LOCATION}/sg/`).then((response) => response.json()).then((scene_graph) => {
+	return fetch(`${RAAS_LOCATION}/sg/`).then((response) => response.json()).then((scene_graph) => {
 		// NOTE: These commands add extra options to configure OSPRay Studio beyond the normal SceneGraph.
 		// To modify the camera, you should use these vectors rather than the transformation vectors.
 		scene_graph.camera.position = [0.0, 0.0, 1.0];
@@ -16,6 +16,8 @@ function get_scene_graph() {
 
 		scene_graph.resolution = '720p'; // This can be a description of the resolution such as 720p, 4K, 8K, etc, or a width by height such as 1920x1080.
 		scene_graph.samples_per_pixel = 1; // The number of samples per pixel to use when rendering.
+		
+		return scene_graph;
 	});
 }
 
