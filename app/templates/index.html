@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<title>OSPRay Studio Web Interface</title>
+	<meta charset="utf-8">
+
+	<script src="{{ url_for('static', filename='js/jsoneditor.min.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/jsoneditor.min.css') }}"></link>
+
+	<script src="{{ url_for('static', filename='js/control.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/render.js') }}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+</head>
+
+<body>
+	<div class="main-window">
+		<div class="sg-editor"></div>
+
+		<div class="result">
+			<div class="spinner"></div>
+			<button class="render-btn">Render</button>
+
+			<img class="render"></img>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function() {
+			setupSGEditor();
+			render();
+
+			document.querySelector('.render-btn').addEventListener('click', function() {
+				render(SGEDITOR.get());
+			});
+		};
+	</script>
+</body>

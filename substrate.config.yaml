@@ -1,9 +1,0 @@
-data:
-  source:
-    - ./data/apple
-
-aws:
-  bucket: substrate-data
-  region: us-east-1
-  managers:
-    't3.medium': 1
