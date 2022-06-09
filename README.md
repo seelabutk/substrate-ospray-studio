@@ -89,6 +89,12 @@ Congragulations, at this point you have successfully interacted with every part 
 OSPRay Studio is configured through what is referred to as a SceneGraph (.sg file). This is a JSON-formatted file that contains the information necessary to perform an OSPRay rendering.
 You may retrieve the SceneGraph used to render the initial scene through the endpoint at {your_raas_link}/sg, or by calling the get_scene_graph function defined in raas.js.
 
+It is important to note that the functions in raas.js are implemented as [Javascript Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to enable asynchronous code. To work with promises, you can either ["await"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) them, or call ["then"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) on them. For example, utilizing get_scene_graph would look like the following:
+
+`get_scene_graph().then((results) => {
+  console.log(results);
+}`
+
 Once you have the SceneGraph, changes can be made to the scene by editing the JSON and issuing a new rendering request to the RaaS. This can be done by calling re_render and passing your modified scene graph as a parameter to the function.
 
 The scene graph is a large deeply nested JSON object. To get a feel for its structure and available values you can tweak, we suggest you implement some sort of editor in which you can modify the JSON and make new ScenGraph objects with. 
