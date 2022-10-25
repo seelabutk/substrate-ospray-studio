@@ -19,26 +19,18 @@ After setting up the RaaS, your next tasks are to build a scene, build a front-e
 
 1. Set up your own AWS account. Go to https://portal.aws.amazon.com/billing/signup and create a new account.
 
-2. Follow [this guide](./docs/AWS_Account_Setup.md) to set up your CLI credentials.
+2. Install [Docker](https://www.docker.com/). Make sure you install the CLI as a part of this.
 
-3. Follow [this guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install the AWS CLI.
-
-4. Install [Node and NPM](https://nodejs.org/en/download/). Then run the following command to install the AWS CDK CLI:
-
-    ```npm install aws-cdk@^1.147.0```
-
-5. Install [Python 3.8 - 3.10](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/).
-
-6. Install Substrate with `pip install seelabutk-substrate`.
-
-7. Define the configuration for Substrate. This can be done by opening the file called `substrate.config.yaml` in your cloned repository. Set the `aws.bucket` property to `substrate-data-{YOUR_NETID}`.
+3. Define the configuration for Substrate. This can be done by opening the file called `substrate.config.yaml` in your cloned repository. Set the `aws.bucket` property to `substrate-data-{YOUR_NETID}`.
 For more information on the full options available to you, please see the (optional) [configuration API](https://github.com/seelabutk/substrate/blob/main/api/substrate.config.yaml).
 
-8. Run the following command to deploy your RaaS to AWS - Make sure you run this command FROM the directory of your repo!
+4. Run the following command to deploy your RaaS to AWS - Make sure you run this command FROM the directory of your repo!
 
-    ```substrate ospray_studio start```
+    ```./run.sh --env AWS_ACCESS_KEY_ID={{YOUR_ACCESS_KEY_ID}} --env AWS_SECRET_ACCESS_KEY={{YOUR_ACCESS_KEY}} start```
 
-9. The previous command should output a link where your RaaS can be accessed.
+If your AWS credentials include a session token, please include it when running `run.sh` as `--env AWS_SESSION_TOKEN={{YOUR_SESSION_TOKEN}}`.
+
+5. The previous command should output a link where your RaaS can be accessed.
 
 ![ready](https://user-images.githubusercontent.com/8481770/163423219-494f3ecd-0727-4ac1-9f35-f6b15077be13.png)
 
@@ -47,9 +39,9 @@ If your RaaS launched successfully, you should see a rendering of an apple after
 
 ![apple](https://user-images.githubusercontent.com/8481770/163423252-2cdbdcdd-ee92-4d3d-8644-0b8420c45f70.png)
 
-10. To kill your RaaS, run the following command:
+6. To kill your RaaS, run the following command:
 
-    ```substrate ospray_studio stop```
+    ```./run.sh --env AWS_ACCESS_KEY_ID={{YOUR_ACCESS_KEY_ID}} --env AWS_SECRET_ACCESS_KEY={{YOUR_ACCESS_KEY}} stop```
 
 The RaaS includes an API which can be used to submit rendering requests and get images or movies back. If the link outputted by your RaaS was http://127.0.0.1, then the following endpoints will be available to you:
 

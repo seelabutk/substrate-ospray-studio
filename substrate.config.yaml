@@ -1,9 +1,9 @@
 data:
   source:
-    - ./data/apple
+    - /root/data/apple  # DON'T CHANGE THIS!
 
 aws:
-  bucket: substrate-data
-  region: us-east-1
+  bucket: {{YOUR_UNIQUE_S3_BUCKET_NAME}}
+  region: us-east-2
   managers:
     't3.medium': 1
